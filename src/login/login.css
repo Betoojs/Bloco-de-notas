@@ -1,0 +1,90 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    width: 380px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.input{
+    width: 300px;
+    height: 40px;
+    font-size: 19px;
+    border: 1px solid black;
+    outline: none;
+    margin: 10px;
+    background-color: transparent;
+    text-align: center;
+    border-radius: 6px;
+}
+
+
+.input::placeholder{
+    text-align: center;
+    color: rgb(2, 39, 24);
+}
+
+.noLogin{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(53, 2, 2);
+}
+
+.noLogin:hover{
+    text-decoration: underline;
+}
+
+#btn-entrar{
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    margin: 10px;
+    background-color: brown;
+    border-radius: 6px;
+    border: none;
+}
+
+#btn-entrar:hover{
+    cursor: pointer;
+    background-color: rgb(116, 26, 26);
+}
+
+.erroUser{
+    border-radius: 6px;
+    width: 300px;
+    background-color: rgb(158, 108, 15);
+}
+
+#textoErro{
+    display: none;
+    margin: 10px;
+    font-size: 20px;
+}
+
+#span-erro{
+    text-decoration: none;
+    color: brown;
+}
+
+#span-erro:hover{
+    text-decoration: underline;
+}
