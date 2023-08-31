@@ -7,52 +7,69 @@ const erroPass = document.getElementById('senha-empty')
 var usuario = false
 var senha = false
 
-btnLogin.addEventListener('click', () => {
-    // var verificarUsuario = document.getElementById('mensagemErro');
-    // console.log(verificarUsuario)
-   
-    // const erroUsuarioExistente = verificar(verificarUsuario)
-    // erroUsuarioExistente;
-    verificar()
-    if (inputUser.value === "" && inputPass.value !== "" && usuario === false) {
-        let userVazio = document.createElement('p');
-        usuario = true
-        userVazio.innerHTML = `<span style="color: red;"> Digite um usuário </span>`;
-        userVazio.id = "userID"
-        erroUser.appendChild(userVazio);
-    } else if (inputPass.value === "" && inputUser.value !== "" && senha === false) {
-        let senhaVazio = document.createElement('p');
-        senha = true
-        senhaVazio.id = "senhaID"
-        erroPass.innerHTML = `<span style="color: red;"> Digite uma senha </span>`;
-        erroPass.appendChild(senhaVazio);
-    } else if (inputUser.value === "" && inputPass.value === "") {
 
-        // estou mexendo aqui
-        let senhaVazio = document.createElement('p');
-        let userVazio = document.createElement('p');
-        senhaVazio.innerHTML = `<span style="color: red;"> Digite uma senha</span>`;
-        userVazio.innerHTML = `<span style="color: red;"> Digite um usuário </span>`;
-        erroPass.appendChild(senhaVazio);
-        erroUser.appendChild(userVazio);
-    } else {
+
+btnLogin.addEventListener('click', () => {
+    verificarSenhaUsuario()
+    if (inputUser.value === "" && inputPass.value !== "" && usuario === false) {
+        execultarUsuario()
+    }
+    else if (inputPass.value === "" && inputUser.value !== "" && senha === false) {
+        execultarSenha()
+    }
+    else if (inputUser.value === "" && inputPass.value === "") {
+        execultarSenhaUsuario()
+    }
+    else {
         console.log('sucesso ao logar')
     }
 })
 
-const verificar = () =>{
-    if(usuario === true){
+
+const validarDados = () => {
+    // fazer validação dos dados
+    location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html"
+}
+
+
+
+
+const verificarSenhaUsuario = () => {
+    if (usuario === true) {
         erroUser.removeChild(erroUser.firstChild);
         usuario = false
     }
-    if(senha === true){
+    if (senha === true) {
         erroPass.removeChild(erroPass.firstChild);
         senha = false
     }
 }
+const execultarSenhaUsuario = () => {
+    if (senha === true && usuario === false) {
+        execultarUsuario()
+        usuario === true
+    }
 
-
-const validarDados = () => {
-    //parei aqui
-    location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html"
+    if (senha === false && usuario === true) {
+        execultarSenha()
+        senha = true
+    }
+    else {
+        execultarSenha()
+        execultarUsuario()
+    }
+}
+const execultarSenha = () => {
+    let senhaVazio = document.createElement('p');
+    senha = true
+    senhaVazio.id = "senhaID"
+    erroPass.innerHTML = `<span style="color: red;"> Digite uma senha </span>`;
+    erroPass.appendChild(senhaVazio);
+}
+const execultarUsuario = () => {
+    let userVazio = document.createElement('p');
+    usuario = true
+    userVazio.innerHTML = `<span style="color: red;"> Digite um usuário </span>`;
+    userVazio.id = "userID"
+    erroUser.appendChild(userVazio);
 }
