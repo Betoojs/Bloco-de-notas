@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
 </head>
-<body>  
 
-    <!-- area de cadastro -->
-    <h1>oi estou aqui</h1>
+<body>
+    <div class="pagina-cadastro">
+        <div class="formulario-cadastro">
+            <h1>Bem vindo(a) Faça seu cadastro para continuar</h1>
+            <input type="text" placeholder="Nome" id="nome">
+            <div>
+                <input type="text" placeholder="Email" id="email">
+                <button id="btn-enviar">Receber código</button>
+            </div>
+            <h2>Digite o código que chegou no seu email</h2>
+            <input type="text" placeholder="Código">
+            <input type="text" placeholder="Usuário" id="usuario">
+            <input type="date" placeholder="idade" id="idade">
+            <input type="password" placeholder="senha" id="senha">
+            <input type="password" placeholder="confirme a senha" id="confirmeSenha">
+        </div>
+    </div>
+
+    <script src="cadastro.js"></script>
 </body>
 </html>
