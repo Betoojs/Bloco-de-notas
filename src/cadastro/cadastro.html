@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
     <title>cadastro</title>
 </head>
 
@@ -12,13 +13,11 @@
         <div class="formulario-cadastro">
             <h1>Bem vindo(a) Faça seu cadastro para continuar</h1>
             <input type="text" placeholder="Nome" id="nome">
-            <div>
-                <input type="text" placeholder="Email" id="email">
-                <div id="erroEmail"></div>
-                <button id="btn-enviar">Receber código</button>
-            </div>
-            <h2>Digite o código que chegou no seu email</h2>
-            <input type="text" placeholder="Código" id="codigo">
+            <div id="erroNome"></div>
+            <input type="text" placeholder="Email" id="email">
+            <div id="erroEmail"></div>
+            <input type="text" placeholder="Código" class="inputCodigo" id="codigo">
+            <button id="btn-enviar">Receber código</button>
             <input type="text" placeholder="Usuário" id="usuario">
             <input type="date" id="data">
             <input type="password" placeholder="senha" id="senha">
@@ -28,4 +27,5 @@
 
     <script src="cadastro.js"></script>
 </body>
+
 </html>

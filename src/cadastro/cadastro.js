@@ -2,6 +2,7 @@
 const userEmail = document.getElementById('email');
 const emailErro = document.getElementById('erroEmail')
 const nomeUsuario = document.getElementById('nome');
+const nomeErro = document.getElementById('erroNome')
 const aniversario = document.getElementById('data');
 const codigoVerificacao = document.getElementById('codigo');
 
@@ -19,26 +20,27 @@ function generateCode() {
 }
 
 
+// botao para enviar o codigo 
+const btn = document.getElementById('btn-enviar');
+btn.addEventListener('click', () => {
+  if (validarEmail()) {
+    const code = generateCode();
+    emailErro.remove(validarEmail);
+    document.getElementById('codigo').style.display = "inline";
+    showNotification("Clique na mensagem para preencher", `Seu código:  ${code}`, () => {
+    codigoVerificacao.value = code;
+    });
+  }
+});
 
+// deixar o nome do usuario corrigido
 function correcaoNome(nome) {
   nome = nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
   return nome;
 }
 
 
-
-const btn = document.getElementById('btn-enviar');
-btn.addEventListener('click', () => {
-  if (validarEmail()) {
-    const code = generateCode();
-    const nomeCorrigido = correcaoNome(nomeUsuario.value);
-    showNotification("Clique na mensagem para preencher", `${nomeCorrigido} Seu código:  ${code}`, () => {
-      codigoVerificacao.value = code;
-    });
-  }
-});
-
-
+// gerar o codigo de verificação
 
 function showNotification(titulo, mensagem, callback) {
   if (Notification.permission !== 'granted') {
@@ -55,7 +57,7 @@ function showNotification(titulo, mensagem, callback) {
 }
 
 
-
+// validações 
 function validarEmail() {
   if (userEmail.value === "") {
     let validarEmail = document.createElement('p');
@@ -66,6 +68,15 @@ function validarEmail() {
   return true
 }
 
+function validarNome() {
+  if (nomeUsuario.value === "") {
+    let validarNome = document.createElement('p');
+    nomeErro.innerHTML = `<span style="color: red;"> Digite um nome</span>`;
+    nomeErro.appendChild(validarNome);
+    return false
+  }
+  return true
+}
 
 
 
