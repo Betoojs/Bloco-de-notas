@@ -21,7 +21,7 @@ btnLogin.addEventListener('click', () => {
         execultarSenhaUsuario()
     }
     else {
-        console.log('sucesso ao logar')
+        location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html"
     }
 })
 
@@ -30,7 +30,6 @@ const validarDados = () => {
     // fazer validação dos dados
     location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html"
 }
-
 
 
 
