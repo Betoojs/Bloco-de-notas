@@ -40,4 +40,20 @@
         font-size: 18px;
         margin-left: 20px;
     }
+    
+    .olho{
+        width: 25px;
+        height: 25px;
+     }
+    
+     .olho{
+        width: 19px;
+        height: 19px;
+     }
+
+     .span-olho{
+        position: absolute;
+        right: 15%;
+        top: 69%;
+    }
 }

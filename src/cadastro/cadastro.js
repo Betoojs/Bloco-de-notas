@@ -1,10 +1,12 @@
-
-const userEmail = document.getElementById('email');
-const emailErro = document.getElementById('erroEmail')
 const nomeUsuario = document.getElementById('nome');
 const nomeErro = document.getElementById('erroNome')
-const aniversario = document.getElementById('data');
+const usuario = document.getElementById('usuario')
+const userEmail = document.getElementById('email');
+const emailErro = document.getElementById('erroEmail')
 const codigoVerificacao = document.getElementById('codigo');
+const aniversario = document.getElementById('data');
+const pass = document.getElementById('senha')
+const confirmepass = document.getElementById('confirmeSenha')
 
 
 // gerar codigo aleatorio 
@@ -31,7 +33,7 @@ btn.addEventListener('click', () => {
     document.getElementById('codigo').style.display = "inline";
     document.getElementById('email').style.border = "none"
     showNotification("Clique na mensagem para preencher", `Seu código:  ${code}`, () => {
-    codigoVerificacao.value = code;
+      codigoVerificacao.value = code;
     });
   }
 });
@@ -65,7 +67,7 @@ function validarEmail() {
   if (userEmail.value === "") {
     document.getElementById('email').style.border = "2px solid red"
     let validarEmail = document.createElement('p');
-    emailErro.innerHTML = `<span style="color: red;"> Digite seu email </span>`;
+    emailErro.innerHTML = `<span style="color: red;"> Digite seu Email </span>`;
     emailErro.appendChild(validarEmail);
     return false
   }
@@ -85,13 +87,35 @@ function validarNome() {
 
 
 // auto correção para so a primeira letra maiuscula
-nomeUsuario.addEventListener('blur', function(){
+nomeUsuario.addEventListener('blur', function () {
   nomeUsuario.value = correcaoNome(nomeUsuario.value)
 })
 
 
 
 
+
+// Função para alternar a exibição da senha
+
+const olhoMostrar = document.getElementById('olhoSenha');
+const senha = document.getElementById('senha');
+const confirmeSenha = document.getElementById('confirmeSenha');
+
+olhoSenha.addEventListener('click', () =>{
+  toggleSenha(senha,confirmeSenha);
+})
+
+function toggleSenha(senha,confirm) {
+  if (senha.type === 'password') {
+    senha.type = 'text';
+    confirm.type = 'text';
+    olhoMostrar.src = '../login/assets/esconder-senha.png'; 
+  } else {
+    senha.type = 'password';
+    confirm.type = 'password';
+    olhoMostrar.src = '../login/assets/mostrar-senha.png';
+  }
+}
 
 
 
