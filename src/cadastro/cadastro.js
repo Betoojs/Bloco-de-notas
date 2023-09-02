@@ -9,6 +9,13 @@ const pass = document.getElementById('senha');
 const confirmepass = document.getElementById('confirmeSenha');
 
 
+function voltar (){
+  location.href = "http://127.0.0.1:5500/src/login/login.html"
+
+}
+
+
+
 // gerar codigo aleatorio 
 function generateCode() {
   const characters = "0123456789";

@@ -12,31 +12,32 @@
 <body>
     <div class="pagina-cadastro">
         <div class="formulario-cadastro">
-                <h1 class="titulo-cadastro"><span class="span-bemvindo">Bem vindo(a)</span><span
-                        class="span-cadastro">Faça
-                        seu cadastro para continuar</span></h1>
-                <div class="conteudo-formulario">
-                    <div class="nome-usuario">
-                        <input type="text" placeholder="Nome" id="nome" class="input" autocomplete="off">
-                        <div id="erroNome"></div>
-                        <input type="text" placeholder="Usuário" id="usuario" class="input" autocomplete="off">
-                    </div>
-                    <div class="receber-email">
-                        <input type="text" placeholder="Email" id="email" class="input">
-                        <div id="erroEmail"></div>
-                        <input type="text" placeholder="Código" id="codigo" class="input" autocomplete="off">
-                        <button id="btn-codigo">Receber código</button>
-                    </div>
-                    <input type="date" id="data" class="input" autocomplete="off">
-                    <div>
-                        <input type="password" placeholder="senha" id="senha" class="input">
-                        <span id="span-olho"><img src="../login/assets/mostrar-senha.png" class="olho" id="olhoSenha"
-                                alt=""></span>
-                        <input type="password" placeholder="confirme a senha" id="confirmeSenha" class="input"
-                            autocomplete="off">
-                        <button id="btn-cadastrar">Cadastrar</button>
+            <h1 class="titulo-cadastro"><span class="span-bemvindo">Bem vindo(a)</span><span class="span-cadastro">Faça
+                    seu cadastro para continuar</span></h1>
+            <div class="conteudo-formulario">
+                <div class="nome-usuario">
+                    <input type="text" placeholder="Nome" id="nome" class="input" autocomplete="off">
+                    <div id="erroNome"></div>
+                    <input type="text" placeholder="Usuário" id="usuario" class="input" autocomplete="off">
                 </div>
+                <div class="receber-email">
+                    <input type="text" placeholder="Email" id="email" class="input">
+                    <div id="erroEmail"></div>
+                    <input type="text" placeholder="Código" id="codigo" class="input" autocomplete="off">
+                    <button id="btn-codigo">Receber código</button>
+                </div>
+                <input type="date" id="data" class="input" autocomplete="off">
+                <div>
+                    <input type="password" placeholder="senha" id="senha" class="input">
+                    <span id="span-olho"><img src="../login/assets/mostrar-senha.png" class="olho" id="olhoSenha"
+                            alt=""></span>
+                    <input type="password" placeholder="confirme a senha" id="confirmeSenha" class="input"
+                        autocomplete="off">
+                    <button id="btn-cadastrar">Cadastrar</button>
+                </div>
+
             </div>
+            <button id="btn-voltar" onclick="voltar()">Entrar</button>
         </div>
     </div>
     <script src="cadastro.js"></script>

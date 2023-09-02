@@ -98,3 +98,17 @@
     right: 26%;
     top: 73.3%;
  }
+
+
+ #btn-voltar{
+    position: absolute;
+    background-color: brown;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    top: 90%;
+    margin-left: 40%;
+ }

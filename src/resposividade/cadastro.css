@@ -18,7 +18,7 @@
     }
 
     #btn-cadastrar {
-        width: 300px;
+        width: 150px;
         margin: 5px 0 10px 25px;
         font-size: 19px;     
     }
@@ -55,6 +55,9 @@
         position: absolute;
         right: 15%;
         top: 73.4%;
+    }
+    #btn-voltar{
+        margin-top: 7px;
     }
 }
 
