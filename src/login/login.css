@@ -37,6 +37,12 @@ body{
     border-radius: 6px;
 }
 
+.input:focus {
+    outline: none;
+    border-color: brown;
+    box-shadow: 0 0 5px rgb(53, 2, 2);;
+}
+
 
 .input::placeholder{
     text-align: center;

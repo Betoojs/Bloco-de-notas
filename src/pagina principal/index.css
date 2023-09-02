@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.pagina-principal{
+    width: 100vw;
+    height: 100vh;
+}
+
+.pagina-principal img{
+    width: 50px;
+    height: 50px;
+}
+
+
+.btnCompras{
+    width: 35px;
+    height: 35px;
+}
+
+#menu{
+    width: 300px;
+    height: 600px;
+    border: 2px solid black;
+    list-style: none;
+}
+
+
+#img-verificar{
+    width: 25px;
+    height: 25px;
+}
+
+#img-verificado{
+    width: 25px;
+    height: 25px;
+}
+
+
+
