@@ -71,10 +71,7 @@
      font-size: 16px;
  }
 
- #codigo {
-     display: none
- }
-
+ 
  #btn-codigo {
      background-color: brown;
      color: white;
@@ -99,5 +96,5 @@
  #span-olho{
     position: absolute;
     right: 26%;
-    top: 69%;
+    top: 73.3%;
  }
