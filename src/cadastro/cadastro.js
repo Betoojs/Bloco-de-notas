@@ -31,6 +31,7 @@ btn.addEventListener('click', () => {
     const code = generateCode();
     emailErro.remove(validarEmail);
     document.getElementById('codigo').style.display = "inline";
+    document.getElementById('span-olho').style.top = "73.3%"
     document.getElementById('email').style.border = "none"
     showNotification("Clique na mensagem para preencher", `Seu código:  ${code}`, () => {
       codigoVerificacao.value = code;
