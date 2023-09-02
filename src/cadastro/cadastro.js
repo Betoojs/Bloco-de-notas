@@ -64,6 +64,54 @@ function showNotification(titulo, mensagem, callback) {
 
 
 // validações 
+
+
+
+const botaoCadastro = document.getElementById("btn-cadastrar")
+
+botaoCadastro.addEventListener('click', () => {
+  const nomeUsuario = document.getElementById("nome").value;
+  const usuario = document.getElementById("usuario").value;
+  const userEmail = document.getElementById("email").value;
+
+  const client = {
+    nome: nomeUsuario,
+    usuario: usuario,
+    email: userEmail,
+  };
+  createClient(client);
+});
+
+const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) || [];
+
+const setLocalStorage = (dbClient) => localStorage.setItem("db_client", JSON.stringify(dbClient));
+
+// CRUD - Delete
+const deleteClient = (index) => {
+    const dbClient = readClient();
+    dbClient.splice(index, 1);
+    setLocalStorage(dbClient);
+};
+
+// CRUD - Update
+const updateClient = (index, client) => {
+    const dbClient = readClient();
+    dbClient[index] = client;
+    setLocalStorage(dbClient);
+};
+
+// CRUD - Read
+const readClient = () => getLocalStorage();
+
+// CRUD - Create
+const createClient = (client) => {
+    const dbClient = getLocalStorage();
+    dbClient.push(client);
+    setLocalStorage(dbClient);
+};
+
+
+
 function validarEmail() {
   if (userEmail.value === "") {
     document.getElementById('email').style.border = "2px solid red"

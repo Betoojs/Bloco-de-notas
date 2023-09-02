@@ -13,9 +13,9 @@ btnAdd.addEventListener('click', () => {
     } 
 
     var verificar = document.createElement('img');
-    verificar.src = './img/verificar.png'; // Defina o caminho correto da imagem
+    verificar.src = './assets/verificar.png'; // Defina o caminho correto da imagem
     var verificado = document.createElement('img');
-    verificado.src = './img/verificado.png'; // Defina o caminho correto da imagem
+    verificado.src = './assets/verificado.png'; // Defina o caminho correto da imagem
 
     var item = document.createElement('li');
     item.innerHTML = `
@@ -52,4 +52,14 @@ btnRem.addEventListener('click', () => {
 });
 
 
-// editar item da lista
+// editar item da lista 
+
+
+
+
+
+
+
+
+
+// editar cadastro
