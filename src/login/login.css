@@ -88,3 +88,15 @@ body{
 #span-erro:hover{
     text-decoration: underline;
 }
+
+
+.olho{
+    width: 20px;
+    height: 20px;
+}
+
+#span-olho{
+    margin-left: 16%;
+    margin-bottom: 1%;
+    position: absolute;
+}

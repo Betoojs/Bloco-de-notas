@@ -58,6 +58,9 @@ const execultarSenhaUsuario = () => {
         execultarUsuario()
     }
 }
+
+
+// erro  senha
 const execultarSenha = () => {
     let senhaVazio = document.createElement('p');
     senha = true
@@ -65,10 +68,32 @@ const execultarSenha = () => {
     erroPass.innerHTML = `<span style="color: red;"> Digite uma senha </span>`;
     erroPass.appendChild(senhaVazio);
 }
+
+// erro usuario
 const execultarUsuario = () => {
     let userVazio = document.createElement('p');
     usuario = true
     userVazio.innerHTML = `<span style="color: red;"> Digite um usuário </span>`;
     userVazio.id = "userID"
     erroUser.appendChild(userVazio);
+}
+
+
+// esconder e mostrar senha
+
+
+const olhoMostrar = document.getElementById('olhoSenha');
+
+olhoSenha.addEventListener('click', () =>{
+  toggleSenha(inputPass);
+})
+
+function toggleSenha(senha) {
+  if (senha.type === 'password') {
+    senha.type = 'text';
+    olhoMostrar.src = './assets/esconder-senha.png'; 
+  } else {
+    senha.type = 'password';
+    olhoMostrar.src = './assets/mostrar-senha.png';
+  }
 }
