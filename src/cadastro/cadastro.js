@@ -6,6 +6,8 @@ const nomeErro = document.getElementById('erroNome')
 const aniversario = document.getElementById('data');
 const codigoVerificacao = document.getElementById('codigo');
 
+
+// gerar codigo aleatorio 
 function generateCode() {
   const characters = "0123456789";
   let length = 6;
@@ -21,12 +23,13 @@ function generateCode() {
 
 
 // botao para enviar o codigo 
-const btn = document.getElementById('btn-enviar');
+const btn = document.getElementById('btn-codigo');
 btn.addEventListener('click', () => {
   if (validarEmail()) {
     const code = generateCode();
     emailErro.remove(validarEmail);
     document.getElementById('codigo').style.display = "inline";
+    document.getElementById('email').style.border = "none"
     showNotification("Clique na mensagem para preencher", `Seu código:  ${code}`, () => {
     codigoVerificacao.value = code;
     });
@@ -60,6 +63,7 @@ function showNotification(titulo, mensagem, callback) {
 // validações 
 function validarEmail() {
   if (userEmail.value === "") {
+    document.getElementById('email').style.border = "2px solid red"
     let validarEmail = document.createElement('p');
     emailErro.innerHTML = `<span style="color: red;"> Digite seu email </span>`;
     emailErro.appendChild(validarEmail);
@@ -67,6 +71,7 @@ function validarEmail() {
   }
   return true
 }
+
 
 function validarNome() {
   if (nomeUsuario.value === "") {
@@ -78,6 +83,11 @@ function validarNome() {
   return true
 }
 
+
+// auto correção para so a primeira letra maiuscula
+nomeUsuario.addEventListener('blur', function(){
+  nomeUsuario.value = correcaoNome(nomeUsuario.value)
+})
 
 
 
