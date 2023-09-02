@@ -1,0 +1,38 @@
+@media screen and (max-width: 450px){
+    @media (max-width: 450px) {
+        .login {
+            padding: 20px; /* Espaçamento interno para melhor legibilidade */
+        }
+        
+        .titulo-login{
+            font-size: 25px;
+            margin: 0 0 0 10px;
+        }
+
+        .input, #btn-entrar, .erroUser {
+            width: 90%; 
+        }
+    
+        #btn-entrar {
+            margin-top: 10px;
+        }
+
+        .noLogin{
+            text-align: center;
+            font-size: 18px;
+        }
+
+        #span-olho{
+            margin-bottom : 7px;
+            margin-left: 72%;
+
+        }
+
+        .div-h1{
+            position: absolute;
+            top: 20%;
+            text-align: center;
+        }
+
+    }
+}
