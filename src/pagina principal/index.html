@@ -10,6 +10,30 @@
 
 <body>
     <div class="pagina-principal">
+
+        <div id="menuHorizontal">
+            <div id="edit">
+                <button id="btn-fechar">X</button>
+                <div class="nome-usuario">
+
+                    <input type="text" placeholder="Nome" id="nome" class="input" autocomplete="off">
+                    <input type="text" placeholder="Usuário" id="usuario" class="input" autocomplete="off">
+                </div>
+                <div class="receber-email">
+                    <input type="text" placeholder="Email" id="email" class="input">
+                </div>
+                <input type="date" id="data" class="input" autocomplete="off">
+                <div>
+                    <input type="password" placeholder="Nova senha" id="senha" class="input">
+                    <button id="btn-salvar">Salvar</button>
+
+                </div>
+            </div>
+            <div id="sair"></div>
+            <button id="btn-sair">Sair</button>
+            <div id="editar"></div>
+            <button id="btn-editar">Editar dados</button>
+        </div>
         <div class="produtos-loja">
             <input type="text" id="input" autocomplete="off">
             <img id="adicionar" class="btnCompras" src="./assets/adicionar.png.png" alt="">
@@ -19,6 +43,8 @@
         <ul id="menu">
         </ul>
     </div>
+
     <script src="index.js"></script>
 </body>
+
 </html>

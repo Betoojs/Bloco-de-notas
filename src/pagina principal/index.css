@@ -1,27 +1,27 @@
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
 }
 
-.pagina-principal{
+.pagina-principal {
     width: 100vw;
     height: 100vh;
 }
 
-.pagina-principal img{
+.pagina-principal img {
     width: 50px;
     height: 50px;
 }
 
 
-.btnCompras{
+.btnCompras {
     width: 35px;
     height: 35px;
 }
 
-#menu{
+#menu {
     width: 300px;
     height: 600px;
     border: 2px solid black;
@@ -29,15 +29,75 @@ body{
 }
 
 
-#img-verificar{
+#img-verificar {
     width: 25px;
     height: 25px;
 }
 
-#img-verificado{
+#img-verificado {
     width: 25px;
     height: 25px;
 }
 
 
 
+#edit {
+    width: 800px;
+    height: 90%;
+    border: 1px solid black;
+    display: none;
+    position: absolute;
+    left: 25%;
+    top: 5%;
+    align-items: center;
+    background: rgba(54, 10, 10, 0.93);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.4px);
+    -webkit-backdrop-filter: blur(3.4px);
+    border: 1px solid rgba(26, 19, 19, 0.3);
+}
+
+
+.input {
+    width: 200px;
+    padding: 10px;
+    margin: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    margin-top: 10%;
+}
+
+
+.input:focus {
+    outline: none;
+    border-color: brown;
+    box-shadow: 0 0 5px rgb(53, 2, 2);;
+}
+
+
+#btn-salvar {
+    background-color: brown;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+#btn-fechar{
+   position: absolute;
+   color: brown;
+   background-color: transparent;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 25px;
+   font-weight: 800;
+   right: 25px;
+}

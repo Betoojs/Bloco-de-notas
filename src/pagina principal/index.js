@@ -52,14 +52,26 @@ btnRem.addEventListener('click', () => {
 });
 
 
-// editar item da lista 
+//voltar para pagina de login
 
-
-
-
-
-
+const botaoSair = document.getElementById('btn-sair')
+botaoSair.addEventListener("click", ()=> {
+  location.href = "http://127.0.0.1:5500/src/login/login.html"
+})
 
 
 
 // editar cadastro
+
+//abrir edit cadastro
+const botaoEditar = document.getElementById('btn-editar')
+botaoEditar.addEventListener('click', ()=>{
+    document.getElementById('edit').style.display = "inline"
+})
+
+
+//fechar  edit cadastro
+const fecharCadastro = document.getElementById("btn-fechar")
+fecharCadastro.addEventListener('click', ()=> {
+    document.getElementById('edit').style.display = "none"
+})
