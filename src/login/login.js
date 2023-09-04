@@ -21,14 +21,33 @@ btnLogin.addEventListener('click', () => {
         execultarSenhaUsuario()
     }
     else {
-        location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html"
+        validarDados()
     }
 })
 
 
 const validarDados = () => {
-    // fazer validação dos dados
-    location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html"
+
+    const itemLocal = JSON.parse(localStorage.getItem('db_client'));
+
+    if (Array.isArray(itemLocal)) {
+        const userCompar = itemLocal.find((item) => {
+            item.usuario === inputUser.value;
+            return item;
+        });
+        const passCompar = itemLocal.find((item) => {
+            item.senha === inputPass.value;
+            return item;
+        });
+
+        if (userCompar.usuario == inputUser.value && passCompar.senha == inputPass.value) {
+            console.log("passou");
+        } else {
+            alert('usuario ou senha errado')
+        }
+    }
+
+
 }
 
 
@@ -84,16 +103,16 @@ const execultarUsuario = () => {
 
 const olhoMostrar = document.getElementById('olhoSenha');
 
-olhoSenha.addEventListener('click', () =>{
-  toggleSenha(inputPass);
+olhoSenha.addEventListener('click', () => {
+    toggleSenha(inputPass);
 })
 
 function toggleSenha(senha) {
-  if (senha.type === 'password') {
-    senha.type = 'text';
-    olhoMostrar.src = './assets/esconder-senha.png'; 
-  } else {
-    senha.type = 'password';
-    olhoMostrar.src = './assets/mostrar-senha.png';
-  }
+    if (senha.type === 'password') {
+        senha.type = 'text';
+        olhoMostrar.src = './assets/esconder-senha.png';
+    } else {
+        senha.type = 'password';
+        olhoMostrar.src = './assets/mostrar-senha.png';
+    }
 }
