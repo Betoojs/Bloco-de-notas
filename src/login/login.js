@@ -7,7 +7,7 @@ const erroPass = document.getElementById('senha-empty')
 var usuario = false
 var senha = false
 
-
+// entrar no site
 
 btnLogin.addEventListener('click', () => {
     verificarSenhaUsuario()
@@ -23,39 +23,46 @@ btnLogin.addEventListener('click', () => {
     else {
         const dados = validarDados(inputUser, inputPass)
         console.log(dados)
+
         if (dados === false) {
             document.getElementById('erroUser').style.display = "inline"
             document.getElementById('erroMobile').style.display = "inline"
-        } else {
+        } else if (dados === true) {
             location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html";
         }
     }
 })
 
 
+// validação usuario e senha
+
 const validarDados = (inputUsuario, inputSenha) => {
 
     const itemLocal = JSON.parse(localStorage.getItem('db_client'));
 
     if (Array.isArray(itemLocal)) {
-        const userCompar = itemLocal.find((item) => {
-            item.usuario === inputUsuario.value;
-            return item;
+        const userCompar = itemLocal.find(item => {
+            if (item.usuario === inputUsuario.value) {
+                return item
+            }
         });
-        const passCompar = itemLocal.find((item) => {
-            item.senha === inputSenha.value;
-            return item;
+        const passCompar = itemLocal.find(item2 => {
+            if (item2.senha === inputSenha.value) {
+                return item2
+            }
         });
 
-        if (userCompar.usuario == inputUsuario.value && passCompar.senha == inputSenha.value) {
+        if (userCompar == passCompar) {
             return true;
         }
-
+        return false
     }
-    return false;
+
 }
 
 
+
+// verificar usuario e senha
 
 const verificarSenhaUsuario = () => {
     if (usuario === true) {
