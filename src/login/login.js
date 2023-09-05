@@ -21,33 +21,38 @@ btnLogin.addEventListener('click', () => {
         execultarSenhaUsuario()
     }
     else {
-        validarDados()
+        const dados = validarDados(inputUser, inputPass)
+        console.log(dados)
+        if (dados === false) {
+            document.getElementById('erroUser').style.display = "inline"
+            document.getElementById('erroMobile').style.display = "inline"
+        } else {
+            location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html";
+        }
     }
 })
 
 
-const validarDados = () => {
+const validarDados = (inputUsuario, inputSenha) => {
 
     const itemLocal = JSON.parse(localStorage.getItem('db_client'));
 
     if (Array.isArray(itemLocal)) {
         const userCompar = itemLocal.find((item) => {
-            item.usuario === inputUser.value;
+            item.usuario === inputUsuario.value;
             return item;
         });
         const passCompar = itemLocal.find((item) => {
-            item.senha === inputPass.value;
+            item.senha === inputSenha.value;
             return item;
         });
 
-        if (userCompar.usuario == inputUser.value && passCompar.senha == inputPass.value) {
-            console.log("passou");
-        } else {
-            alert('usuario ou senha errado')
+        if (userCompar.usuario == inputUsuario.value && passCompar.senha == inputSenha.value) {
+            return true;
         }
+
     }
-
-
+    return false;
 }
 
 
@@ -116,3 +121,18 @@ function toggleSenha(senha) {
         olhoMostrar.src = './assets/mostrar-senha.png';
     }
 }
+
+
+
+// limpar o erro se o usuario digitar um novo usuario ou senha
+inputUser.addEventListener('keyup', () => {
+    document.getElementById('erroUser').style.display = "none"
+    document.getElementById('erroMobile').style.display = "none"
+})
+
+inputPass.addEventListener('keyup', () => {
+    document.getElementById('erroUser').style.display = "none"
+    document.getElementById('erroMobile').style.display = "none"
+})
+
+

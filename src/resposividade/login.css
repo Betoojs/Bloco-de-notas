@@ -30,8 +30,23 @@
 
         .div-h1{
             position: absolute;
-            top: 20%;
+            top: 10%;
             text-align: center;
+        }
+
+        #semUsuario{
+            display: none;
+        }
+
+        #erroUser{
+            background-color: transparent;
+        }
+        
+
+        #erroMobile{
+            color: red;
+            font-size: 19px;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
     }

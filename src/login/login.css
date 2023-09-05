@@ -74,17 +74,16 @@ body{
     background-color: rgb(116, 26, 26);
 }
 
-.erroUser{
+#erroUser{
+    display: none;
+    padding: 2px;
     border-radius: 6px;
     width: 300px;
+    font-size: 13px;
+    text-align: center;
     background-color: rgb(158, 108, 15);
 }
 
-#textoErro{
-    display: none;
-    margin: 10px;
-    font-size: 20px;
-}
 
 #span-erro{
     text-decoration: none;
@@ -105,4 +104,9 @@ body{
     margin-left: 16%;
     margin-bottom: 1%;
     position: absolute;
+}
+
+#erroMobile{
+    display: none;
+    color: transparent;
 }

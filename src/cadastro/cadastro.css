@@ -44,7 +44,7 @@
 
 
  .input {
-     width: 100%;
+     width: 86%;
      padding: 10px;
      margin: 10px 0;
      border: 1px solid #ccc;
@@ -111,4 +111,15 @@
     font-size: 16px;
     top: 90%;
     margin-left: 40%;
+ }
+
+
+
+
+
+ #cadastrando{
+    display: none;
+    color: brown;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
  }

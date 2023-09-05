@@ -9,7 +9,7 @@ const pass = document.getElementById('senha');
 const confirmepass = document.getElementById('confirmeSenha');
 
 
-function voltar (){
+function voltar() {
   location.href = "http://127.0.0.1:5500/src/login/login.html"
 
 }
@@ -88,7 +88,6 @@ botaoCadastro.addEventListener('click', () => {
       usuario.value = "";
     } else {
       logar()
-      alert('sucesso ao cadastrar')
       nome.value = ""
       usuario.value = ""
       userEmail.value = ""
@@ -96,11 +95,13 @@ botaoCadastro.addEventListener('click', () => {
       confirmepass.value = ""
       aniversario.value = ""
       codigoVerificacao.value = ""
-
+      document.getElementById('cadastrando').style.display = "block"
+      document.getElementById('carregarFormulario').style.display = "none"
+      setTimeout(() => {
+        location.href = "http://127.0.0.1:5500/src/login/login.html";
+      }, 1000);
     }
   }
-
-
 });
 
 
