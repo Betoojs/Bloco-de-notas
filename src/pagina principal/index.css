@@ -8,6 +8,7 @@ body {
 .pagina-principal {
     width: 100vw;
     height: 100vh;
+    display: flex;
 }
 
 .pagina-principal img {
@@ -59,6 +60,53 @@ body {
 }
 
 
+
+
+.produtos-loja{
+    width: 400px;
+    height: 800px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#addRet{
+    position: absolute;
+}
+
+
+/* Estilo para o input com outline marrom quando em foco */
+#inputLista {
+    width: 180px;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#inputLista:focus {
+    outline: none;
+    border-color: brown; /* Cor do contorno quando em foco */
+    box-shadow: 0 0 5px rgba(139, 69, 19, 0.5); /* Sombra suave quando em foco */
+}
+
+
+
+
+
+
+
+
+
+
+ /* div para editar dados */
 .input {
     width: 200px;
     padding: 10px;
@@ -101,3 +149,9 @@ body {
    font-weight: 800;
    right: 25px;
 }
+
+
+
+
+
+
