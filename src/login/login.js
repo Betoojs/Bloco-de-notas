@@ -21,46 +21,31 @@ btnLogin.addEventListener('click', () => {
         execultarSenhaUsuario()
     }
     else {
-        const dados = validarDados(inputUser, inputPass)
-        console.log(dados)
-
-        if (dados === false) {
-            document.getElementById('erroUser').style.display = "inline"
-            document.getElementById('erroMobile').style.display = "inline"
-        } else if (dados === true) {
-            location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html";
-        }
+        validarDado()
     }
 })
 
 
 // validação usuario e senha
 
-const validarDados = (inputUsuario, inputSenha) => {
-
+const validarDado = () => {
+    var validacao = false;
     const itemLocal = JSON.parse(localStorage.getItem('db_client'));
-
-    if (Array.isArray(itemLocal)) {
-        const userCompar = itemLocal.find(item => {
-            if (item.usuario === inputUsuario.value) {
-                return item
-            }
-        });
-        const passCompar = itemLocal.find(item2 => {
-            if (item2.senha === inputSenha.value) {
-                return item2
-            }
-        });
-
-        if (userCompar == passCompar) {
-            return true;
+    itemLocal.forEach(item => {
+        if (item.usuario === inputUser.value && item.senha === inputPass.value) {
+            item.validar = true
+            validacao = true
+            localStorage.setItem('db_client', JSON.stringify(itemLocal));
         }
-        return false
+
+    });
+    
+    if (validacao) {
+       location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html"
+    }else{
+        document.getElementById('erroUser').style.display = "inline"
     }
-
 }
-
-
 
 // verificar usuario e senha
 

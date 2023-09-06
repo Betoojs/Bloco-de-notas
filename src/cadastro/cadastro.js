@@ -99,7 +99,7 @@ botaoCadastro.addEventListener('click', () => {
       document.getElementById('carregarFormulario').style.display = "none"
       setTimeout(() => {
         location.href = "http://127.0.0.1:5500/src/login/login.html";
-      }, 1000);
+      }, 2000);
     }
   }
 });
@@ -125,6 +125,7 @@ const logar = () => {
     confirmarPass: confirmepass,
     email: userEmail,
     data: aniversario,
+    validar: false
   };
 
   createClient(client);

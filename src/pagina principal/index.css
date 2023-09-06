@@ -98,14 +98,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
  /* div para editar dados */
 .input {
     width: 200px;
@@ -123,6 +115,11 @@ body {
     outline: none;
     border-color: brown;
     box-shadow: 0 0 5px rgb(53, 2, 2);;
+}
+
+
+#email{
+    width: 250px;
 }
 
 

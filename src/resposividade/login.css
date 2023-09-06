@@ -34,14 +34,6 @@
             text-align: center;
         }
 
-        #semUsuario{
-            display: none;
-        }
-
-        #erroUser{
-            background-color: transparent;
-        }
-        
 
         #erroMobile{
             color: red;

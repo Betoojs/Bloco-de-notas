@@ -8,9 +8,9 @@ const inputItem = document.getElementById('inputLista');
 // adicionar item a lista
 
 btnAdd.addEventListener('click', () => {
-   if(inputItem.value === ""){
-    return alert("não tem nada para ser adicionado")
-    } 
+    if (inputItem.value === "") {
+        return alert("não tem nada para ser adicionado")
+    }
 
     var verificar = document.createElement('img');
     verificar.src = './assets/verificar.png'; // Defina o caminho correto da imagem
@@ -46,7 +46,7 @@ btnAdd.addEventListener('click', () => {
 btnRem.addEventListener('click', () => {
     if (carrinhoCompras.lastChild) {
         carrinhoCompras.removeChild(carrinhoCompras.lastChild);
-    } else if(inputItem.value === ""){
+    } else if (inputItem.value === "") {
         alert("não tem nada para ser removido")
     }
 });
@@ -55,23 +55,89 @@ btnRem.addEventListener('click', () => {
 //voltar para pagina de login
 
 const botaoSair = document.getElementById('btn-sair')
-botaoSair.addEventListener("click", ()=> {
-  location.href = "http://127.0.0.1:5500/src/login/login.html"
+botaoSair.addEventListener("click", () => {
+    location.href = "http://127.0.0.1:5500/src/login/login.html"
 })
 
 
 
-// editar cadastro
 
-//abrir edit cadastro
+
+//abrir / edit cadastro
 const botaoEditar = document.getElementById('btn-editar')
-botaoEditar.addEventListener('click', ()=>{
+botaoEditar.addEventListener('click', () => {
     document.getElementById('edit').style.display = "inline"
+    editarDados()
 })
+
+const editarDados = () => {
+    const itemLocal = JSON.parse(localStorage.getItem('db_client'));
+    itemLocal.forEach(item => {
+        if (item.validar === true) {
+            document.getElementById('nome').value = item.nome;
+            document.getElementById('usuario').value = item.usuario;
+            document.getElementById('email').value = item.email;
+            document.getElementById('data').value = item.data;
+            document.getElementById('senha').value = item.senha;
+        }
+    });
+}
 
 
 //fechar  edit cadastro
 const fecharCadastro = document.getElementById("btn-fechar")
-fecharCadastro.addEventListener('click', ()=> {
+fecharCadastro.addEventListener('click', () => {
     document.getElementById('edit').style.display = "none"
 })
+
+
+
+// salvar oque editou
+
+const salvarCadastro = document.getElementById('btn-salvar')
+salvarCadastro.addEventListener('click', () => {
+    const itemLocal = JSON.parse(localStorage.getItem('db_client'));
+    itemLocal.forEach(item => {
+        if (item.validar === true) {
+            item.nome = document.getElementById('nome').value
+            item.usuario = document.getElementById('usuario').value;
+            item.email = document.getElementById('email').value;
+            item.data = document.getElementById('data').value;
+            item.senha = document.getElementById('senha').value;
+            localStorage.setItem('db_client', JSON.stringify(itemLocal));
+        }
+    });
+})
+
+
+
+// fechar pagina de usuario 
+
+const fecharLogin = document.getElementById('btn-sair')
+fecharLogin.addEventListener('click', () => {
+    const itemLocal = JSON.parse(localStorage.getItem('db_client'));
+    itemLocal.forEach(item => {
+        if (item.validar === true) {
+            item.validar = false
+            localStorage.setItem('db_client', JSON.stringify(itemLocal));
+        }
+
+    });
+})
+
+
+
+// mostrar senha
+
+function toggleSenha(senha) {
+    if (senha.type === 'password') {
+        senha.type = 'text';
+        olhoMostrar.src = './assets/esconder-senha.png';
+    } else {
+        senha.type = 'password';
+        olhoMostrar.src = './assets/mostrar-senha.png';
+    }
+}
+
+
+
