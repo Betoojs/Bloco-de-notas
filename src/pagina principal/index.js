@@ -1,7 +1,7 @@
 const carrinhoCompras = document.getElementById('menu');
 const btnAdd = document.getElementById('adicionar');
 const btnRem = document.getElementById('remover');
-const inputItem = document.getElementById('input');
+const inputItem = document.getElementById('inputLista');
 
 
 
