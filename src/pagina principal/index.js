@@ -103,6 +103,7 @@ const editarDados = () => {
 //fechar  edit cadastro
 const fecharCadastro = document.getElementById("btn-fechar")
 fecharCadastro.addEventListener('click', () => {
+    location.href = "#dados"
     document.getElementById('edit').style.display = "none"
 })
 

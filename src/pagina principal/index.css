@@ -48,7 +48,7 @@ body {
 
 
 #menuHorizontal{
-    height: 200%;
+    height: 400%;
 }
 
 #edit {
@@ -58,7 +58,7 @@ body {
     display: none;
     position: absolute;
     left: 25%;
-    margin-top: 70%;
+    margin-top: 100%;
     align-items: center;
     background: rgba(20, 17, 17, 0.96);
     border-radius: 16px;

@@ -1,0 +1,82 @@
+@media (max-width: 450px) {
+  
+    body{
+        overflow: hidden;
+    }
+
+    .pagina-principal img {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .btnCompras {
+        width: 35px;
+        height: 35px;
+    }
+
+    #menu {
+        width: 100%;
+        height: 500px;
+        border: 2px solid black;
+        border-radius: 7px;
+        list-style: none;
+        overflow-y: auto;
+        padding: 30px;
+        font-size: 25px;
+    }
+
+
+    #img-verificar {
+        width: 25px;
+        height: 25px;
+    }
+
+    #img-verificado {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    #menuHorizontal {
+        height: 100%;
+    }
+
+    #edit {
+        width: 100%;
+        height: 100%;
+        display: none;
+        left: 0;
+        margin-top: 500%;
+        align-items: center;
+        border-radius: 0;
+    }
+
+
+    .produtos-loja {
+        width: 300px;
+        height: 600px;
+        margin-top: 30%;
+    }
+
+
+
+    #inputLista {
+        width: 130px;
+        padding: 8px;
+        margin-right: 90px;
+    }
+
+    #btn-salvar{
+        top: 92.3%;
+        left: 20px;
+        position: absolute;
+    }
+
+    #span-olho {
+        position: absolute;
+        left: 60%;
+        bottom: 12%;
+    }
+
+}
