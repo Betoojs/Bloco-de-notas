@@ -148,6 +148,18 @@ body {
 }
 
 
+#olhoSenha{
+    width: 25px;
+    height: 25px;
+}
+
+#span-olho{
+    position: absolute;
+    left: 30%;
+    bottom: 24.4%;
+}
+
+
 
 
 

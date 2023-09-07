@@ -128,6 +128,14 @@ fecharLogin.addEventListener('click', () => {
 
 
 // mostrar senha
+const olhoMostrar = document.getElementById('olhoSenha');
+const btnSenha = document.getElementById('senha')
+
+
+olhoSenha.addEventListener('click', () => {
+    toggleSenha(btnSenha);
+})
+
 
 function toggleSenha(senha) {
     if (senha.type === 'password') {
