@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -47,6 +47,9 @@ body {
 }
 
 
+#menuHorizontal{
+    height: 200%;
+}
 
 #edit {
     width: 800px;
@@ -55,7 +58,7 @@ body {
     display: none;
     position: absolute;
     left: 25%;
-    top: 5%;
+    margin-top: 70%;
     align-items: center;
     background: rgba(20, 17, 17, 0.96);
     border-radius: 16px;
@@ -196,6 +199,7 @@ body {
 #olhoSenha {
     width: 25px;
     height: 25px;
+   
 }
 
 #span-olho {
@@ -208,6 +212,7 @@ body {
     position: absolute;
     top: 3%;
     right: 0;
+    cursor: pointer;
 }
 
 

@@ -30,22 +30,23 @@ btnLogin.addEventListener('click', () => {
 
 const validarDado = () => {
     var validacao = false;
-    const itemLocal = JSON.parse(localStorage.getItem('db_client'));
+    const itemLocal = JSON.parse(localStorage.getItem('db_client')) || [];
+
     itemLocal.forEach(item => {
         if (item.usuario === inputUser.value && item.senha === inputPass.value) {
-            item.validar = true
-            validacao = true
+            item.validar = true;
+            validacao = true;
             localStorage.setItem('db_client', JSON.stringify(itemLocal));
         }
-
     });
-    
+
     if (validacao) {
-       location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html"
-    }else{
-        document.getElementById('erroUser').style.display = "inline"
+        location.href = "http://127.0.0.1:5500/src/pagina%20principal/index.html";
+    } else {
+        document.getElementById('erroUser').style.display = "inline";
     }
 }
+
 
 // verificar usuario e senha
 

@@ -82,6 +82,7 @@ botaoSair.addEventListener("click", () => {
 const botaoEditar = document.getElementById('btn-editar')
 botaoEditar.addEventListener('click', () => {
     document.getElementById('edit').style.display = "inline"
+    location.href = "#edit"
     editarDados()
 })
 
