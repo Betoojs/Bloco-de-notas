@@ -4,7 +4,6 @@ const btnRem = document.getElementById('remover');
 const inputItem = document.getElementById('inputLista');
 
 
-
 // adicionar item a lista
 
 btnAdd.addEventListener('click', () => {
@@ -13,9 +12,9 @@ btnAdd.addEventListener('click', () => {
     }
 
     var verificar = document.createElement('img');
-    verificar.src = './assets/verificar.png'; // Defina o caminho correto da imagem
+    verificar.src = './assets/verificar.png';
     var verificado = document.createElement('img');
-    verificado.src = './assets/verificado.png'; // Defina o caminho correto da imagem
+    verificado.src = './assets/verificado.png';
 
     var item = document.createElement('li');
     item.innerHTML = `
@@ -40,7 +39,6 @@ btnAdd.addEventListener('click', () => {
 });
 
 
-
 // remover item da lista
 
 btnRem.addEventListener('click', () => {
@@ -48,6 +46,23 @@ btnRem.addEventListener('click', () => {
         carrinhoCompras.removeChild(carrinhoCompras.lastChild);
     } else if (inputItem.value === "") {
         alert("não tem nada para ser removido")
+    }
+});
+
+
+// limpar tudo da lista
+
+const btnLimpar = document.getElementById('btn-limpar');
+btnLimpar.addEventListener('click', () => {
+    if (carrinhoCompras.lastElementChild) {
+        const respostaConfirm = confirm("Tem certeza que deseja limpar sua lista?");
+        if (respostaConfirm) {
+            while (carrinhoCompras.firstChild) {
+                carrinhoCompras.removeChild(carrinhoCompras.firstChild);
+            }
+        }
+    } else if (carrinhoCompras.childElementCount === 0) {
+        alert("Não tem nada na lista.");
     }
 });
 

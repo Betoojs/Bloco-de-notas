@@ -3,17 +3,19 @@ body {
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .pagina-principal {
     width: 100vw;
     height: 100vh;
     display: flex;
+    justify-content: center;
 }
 
 .pagina-principal img {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
 }
 
 
@@ -23,10 +25,14 @@ body {
 }
 
 #menu {
-    width: 300px;
+    width: 350px;
     height: 600px;
     border: 2px solid black;
+    border-radius: 7px;
     list-style: none;
+    overflow-y: auto;
+    padding: 30px;
+    font-size: 25px;
 }
 
 
@@ -51,33 +57,29 @@ body {
     left: 25%;
     top: 5%;
     align-items: center;
-    background: rgba(54, 10, 10, 0.93);
+    background: rgba(20, 17, 17, 0.96);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.4px);
-    -webkit-backdrop-filter: blur(3.4px);
-    border: 1px solid rgba(26, 19, 19, 0.3);
+    backdrop-filter: blur(17.9px);
+    -webkit-backdrop-filter: blur(17.9px);
+    border: 1px solid rgba(20, 17, 17, 0.3);
 }
 
 
 
 
-.produtos-loja{
+.produtos-loja {
     width: 400px;
     height: 800px;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-#addRet{
     position: absolute;
 }
 
 
-/* Estilo para o input com outline marrom quando em foco */
+
 #inputLista {
     width: 180px;
     padding: 10px;
@@ -93,12 +95,13 @@ body {
 
 #inputLista:focus {
     outline: none;
-    border-color: brown; /* Cor do contorno quando em foco */
-    box-shadow: 0 0 5px rgba(139, 69, 19, 0.5); /* Sombra suave quando em foco */
+    border-color: brown;
+    box-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
 }
 
 
- /* div para editar dados */
+/* div para editar dados */
+
 .input {
     width: 200px;
     padding: 10px;
@@ -114,11 +117,12 @@ body {
 .input:focus {
     outline: none;
     border-color: brown;
-    box-shadow: 0 0 5px rgb(53, 2, 2);;
+    box-shadow: 0 0 5px rgb(53, 2, 2);
+    ;
 }
 
 
-#email{
+#email {
     width: 250px;
 }
 
@@ -133,34 +137,83 @@ body {
     font-size: 16px;
 }
 
+#btn-sair {
+    width: 80px;
+    height: 30px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
 
-#btn-fechar{
-   position: absolute;
-   color: brown;
-   background-color: transparent;
-   padding: 10px 20px;
-   border: none;
-   border-radius: 5px;
-   cursor: pointer;
-   font-size: 25px;
-   font-weight: 800;
-   right: 25px;
+}
+
+#btn-editar {
+    width: 100px;
+    height: 30px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#btn-fechar {
+    position: absolute;
+    color: brown;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 800;
+    right: 25px;
+}
+
+#btn-limpar {
+    width: 80px;
+    height: 30px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botao-limpar {
+    position: absolute;
+    display: flex;
+    right: 10%;
+    top: 20%;
 }
 
 
-#olhoSenha{
+#olhoSenha {
     width: 25px;
     height: 25px;
 }
 
-#span-olho{
+#span-olho {
     position: absolute;
     left: 30%;
     bottom: 24.4%;
 }
 
+#addRet {
+    position: absolute;
+    top: 3%;
+    right: 0;
+}
 
 
-
-
-
+#dados {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
